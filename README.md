@@ -39,17 +39,6 @@ postgresql-review/
 │       ├── dql/
 │       │   └── queries.sql
 │       └── review_consultas.md
-│
-│   └── 01-campus/
-│       ├── ddl/
-│       │   └── schema.sql
-│       ├── dml/
-│       │   ├── delete.sql
-│       │   ├── insert.sql
-│       │   └── update.sql
-│       ├── dql/
-│       │   └── queries.sql
-│       └── Ejercicios_crud.md
 └── README.md
 ```
 
@@ -75,7 +64,7 @@ Durante este review se trabajaron los principales comandos y cláusulas de DQL m
 - `WHERE`
 - `ORDER BY`
 - `LIMIT`
-- `LIKE` e 
+- `LIKE` 
 - `BETWEEN`
 - `JOIN`
 - Funciones de agregación como `COUNT`, `AVG`, `MIN` y `MAX`
