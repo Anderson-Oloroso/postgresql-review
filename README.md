@@ -40,6 +40,16 @@ postgresql-review/
 │       │   └── queries.sql
 │       └── review_consultas.md
 │
+│   └── 01-campus/
+│       ├── ddl/
+│       │   └── schema.sql
+│       ├── dml/
+│       │   ├── delete.sql
+│       │   ├── insert.sql
+│       │   └── update.sql
+│       ├── dql/
+│       │   └── queries.sql
+│       └── Ejercicios_crud.md
 └── README.md
 ```
 
