@@ -13,3 +13,35 @@ Reforzar los conocimientos de PostgreSQL mediante ejercicios prácticos relacion
 - Relaciones entre tablas.
 - Operaciones CRUD.
 - Buenas prácticas en PostgreSQL.
+
+
+## Estructura actual del repositorio
+
+```text
+postgresql-review/
+├── reviews/
+│   └── 01-campus/
+│       ├── ddl/
+│       │   └── schema.sql
+│       ├── dml/
+│       │   ├── delete.sql
+│       │   ├── insert.sql
+│       │   └── update.sql
+│       ├── dql/
+│       │   └── queries.sql
+│       └── Ejercicios_crud.md
+└── README.md
+```
+
+## Reviews realizados
+### 01-campus
+Review enfocado en el diseño y manejo de una base de datos para estudiantes de la escuela Campus.
+
+Durante este review se trabajaron los principales comandos SQL:
+
+- **DDL:** creación de la estructura de la base de datos y sus tablas.
+- **DML:** inserción, actualización y eliminación de registros mediante `INSERT`, `UPDATE` y `DELETE`.
+- **DQL:** consulta de información utilizando `SELECT`.
+
+El objetivo fue practicar las operaciones básicas de gestión de datos y realizar consultas sobre la información de los estudiantes.
+
