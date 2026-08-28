@@ -72,6 +72,7 @@ postgresql-review/
 
 ## Reviews realizados
 ### 01-campus
+---
 Review enfocado en el diseño y manejo de una base de datos para estudiantes de la escuela Campus.
 
 Durante este review se trabajaron los principales comandos SQL:
@@ -83,7 +84,7 @@ Durante este review se trabajaron los principales comandos SQL:
 El objetivo fue practicar las operaciones básicas de gestión de datos y realizar consultas sobre la información de los estudiantes.
 
 ### 02-biblioteca
-
+---
 Review enfocado en la consulta y análisis de una base de datos para una biblioteca.
 
 Durante este review se trabajaron los principales comandos y cláusulas de DQL mediante consultas sobre libros y autores, utilizando:
@@ -102,7 +103,7 @@ Durante este review se trabajaron los principales comandos y cláusulas de DQL m
 El objetivo fue practicar la obtención, filtrado, ordenamiento y análisis de información relacionada con libros, autores, precios, fechas de publicación y nacionalidades.
 
 ### 03-operaciones-avanzadas
-
+---
 Review enfocado en operaciones avanzadas de administración, mantenimiento y manipulación de datos en PostgreSQL.
 
 Durante este review se trabajaron conceptos y herramientas clave de nivel backend:
@@ -114,7 +115,7 @@ Durante este review se trabajaron conceptos y herramientas clave de nivel backen
 - **Respaldos y restauración (CLI):** generación de backups en formato plano (`.sql`) y binario (`.tar`) usando `pg_dump`, y su posterior restauración con `psql` y `pg_restore`.
 
 ### 04-wf-cte
-
+---
 Review enfocado en la implementación de Funciones de Ventana (Window Functions) y Expresiones de Tabla Comunes (CTEs) para el análisis avanzado de datos de ventas.
 
 Durante este review se trabajaron conceptos clave de consulta y agregación analítica en PostgreSQL:
