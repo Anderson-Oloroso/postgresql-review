@@ -40,24 +40,33 @@ postgresql-review/
 │   │   │   └── queries.sql
 │   │   └── review_consultas.md
 │   │
-│   └── 03-operaciones-avanzadas/
-│       ├── backup/
-│       │   ├── customers_bck.sql
-│       │   └── customers_bck.tar
-│       ├── cleanup/
-│       │   └── duplicates.sql
+│   ├── 03-operaciones-avanzadas/
+│   │   ├── backup/
+│   │   │   ├── customers_bck.sql
+│   │   │   └── customers_bck.tar
+│   │   ├── cleanup/
+│   │   │   └── duplicates.sql
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   ├── delete.sql
+│   │   │   ├── insert.sql
+│   │   │   └── update.sql
+│   │   ├── dql/
+│   │   │   └── queries.sql
+│   │   ├── import/
+│   │   │   ├── data_add.csv
+│   │   │   └── data.csv
+│   │   └── instrucciones.md
+│   │
+│   └── 04-wf-cte/
 │       ├── ddl/
 │       │   └── schema.sql
 │       ├── dml/
-│       │   ├── delete.sql
-│       │   ├── insert.sql
-│       │   └── update.sql
+│       │   └── insert.sql
 │       ├── dql/
 │       │   └── queries.sql
-│       ├── import/
-│       │   ├── data_add.csv
-│       │   └── data.csv
-│       └── instrucciones.md
+│       └── review.md
 └── README.md
 ```
 
@@ -103,3 +112,14 @@ Durante este review se trabajaron conceptos y herramientas clave de nivel backen
 - **Actualizaciones complejas:** sincronización entre tablas mediante `UPDATE ... FROM`, uso de la cláusula `RETURNING` y captura de datos en variables dentro de bloques procedurales `DO` (PL/pgSQL).
 - **Limpieza de datos (Cleanup):** eliminación condicional con subconsultas (`DELETE ... WHERE NOT IN`) y deduplicación avanzada mediante `CTE` y funciones de ventana (`ROW_NUMBER() OVER`).
 - **Respaldos y restauración (CLI):** generación de backups en formato plano (`.sql`) y binario (`.tar`) usando `pg_dump`, y su posterior restauración con `psql` y `pg_restore`.
+
+### 04-wf-cte
+
+Review enfocado en la implementación de Funciones de Ventana (Window Functions) y Expresiones de Tabla Comunes (CTEs) para el análisis avanzado de datos de ventas.
+
+Durante este review se trabajaron conceptos clave de consulta y agregación analítica en PostgreSQL:
+
+- **Funciones de ventana:** análisis comparativo de registros con `LAG()`, cálculo de acumulados diarios e históricos mediante `SUM() OVER()`, numeración secuencial con `ROW_NUMBER() OVER()` y particionado por períodos de tiempo usando `DATE_TRUNC()`.
+- **Expresiones de tabla comunes (CTEs):** estructuración de consultas complejas utilizando la cláusula `WITH` para modularizar lógica de negocio, agregación con `SUM()`, `AVG()` y `COUNT()`, manejo de valores nulos con `COALESCE()`, combinación de bloques mediante `FULL OUTER JOIN` y filtrado condicional sobre métricas agregadas.
+
+El objetivo fue practicar la generación de reportes detallados, métricas acumulativas, cálculos porcentuales mensuales y análisis comparativos por vendedor.
