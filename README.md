@@ -31,14 +31,33 @@ postgresql-review/
 │   │   │   └── queries.sql
 │   │   └── ejercicios_crud.md
 │   │
-│   └── 02-biblioteca/
+│   ├── 02-biblioteca/
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   └── inserts.sql
+│   │   ├── dql/
+│   │   │   └── queries.sql
+│   │   └── review_consultas.md
+│   │
+│   └── 03-operaciones-avanzadas/
+│       ├── backup/
+│       │   ├── customers_bck.sql
+│       │   └── customers_bck.tar
+│       ├── cleanup/
+│       │   └── duplicates.sql
 │       ├── ddl/
 │       │   └── schema.sql
 │       ├── dml/
-│       │   └── inserts.sql
+│       │   ├── delete.sql
+│       │   ├── insert.sql
+│       │   └── update.sql
 │       ├── dql/
 │       │   └── queries.sql
-│       └── review_consultas.md
+│       ├── import/
+│       │   ├── data_add.csv
+│       │   └── data.csv
+│       └── instrucciones.md
 └── README.md
 ```
 
@@ -72,3 +91,15 @@ Durante este review se trabajaron los principales comandos y cláusulas de DQL m
 - `HAVING`
 
 El objetivo fue practicar la obtención, filtrado, ordenamiento y análisis de información relacionada con libros, autores, precios, fechas de publicación y nacionalidades.
+
+### 03-operaciones-avanzadas
+
+Review enfocado en operaciones avanzadas de administración, mantenimiento y manipulación de datos en PostgreSQL.
+
+Durante este review se trabajaron conceptos y herramientas clave de nivel backend:
+
+- **Carga masiva de datos:** importación desde archivos CSV utilizando comandos `\copy`.
+- **Gestión de secuencias y unicidad:** restricción `UNIQUE`, manejo de conflictos con `ON CONFLICT ... DO NOTHING` y resincronización de secuencias con `SETVAL` y `pg_get_serial_sequence`.
+- **Actualizaciones complejas:** sincronización entre tablas mediante `UPDATE ... FROM`, uso de la cláusula `RETURNING` y captura de datos en variables dentro de bloques procedurales `DO` (PL/pgSQL).
+- **Limpieza de datos (Cleanup):** eliminación condicional con subconsultas (`DELETE ... WHERE NOT IN`) y deduplicación avanzada mediante `CTE` y funciones de ventana (`ROW_NUMBER() OVER`).
+- **Respaldos y restauración (CLI):** generación de backups en formato plano (`.sql`) y binario (`.tar`) usando `pg_dump`, y su posterior restauración con `psql` y `pg_restore`.
