@@ -59,14 +59,29 @@ postgresql-review/
 │   │   │   └── data.csv
 │   │   └── instrucciones.md
 │   │
-│   └── 04-wf-cte/
+│   ├── 04-wf-cte/
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   └── insert.sql
+│   │   ├── dql/
+│   │   │   └── queries.sql
+│   │   └── review.md
+│   │
+│   └── 05-progra-automatizacion/
 │       ├── ddl/
 │       │   └── schema.sql
 │       ├── dml/
 │       │   └── insert.sql
 │       ├── dql/
-│       │   └── queries.sql
-│       └── review.md
+│       │   ├── set_operations.sql
+│       │   └── views.sql
+│       ├── routines/
+│       │   ├── functions.sql
+│       │   └── procedures.sql
+│       ├── triggers/
+│       │   └── audit_triggers.sql
+│       └── instructions.md
 └── README.md
 ```
 
@@ -124,3 +139,15 @@ Durante este review se trabajaron conceptos clave de consulta y agregación anal
 - **Expresiones de tabla comunes (CTEs):** estructuración de consultas complejas utilizando la cláusula `WITH` para modularizar lógica de negocio, agregación con `SUM()`, `AVG()` y `COUNT()`, manejo de valores nulos con `COALESCE()`, combinación de bloques mediante `FULL OUTER JOIN` y filtrado condicional sobre métricas agregadas.
 
 El objetivo fue practicar la generación de reportes detallados, métricas acumulativas, cálculos porcentuales mensuales y análisis comparativos por vendedor.
+
+### 05-progra-automatizacion
+
+Review enfocado en la programación procedural en PostgreSQL (PL/pgSQL), creación de vistas y automatización mediante triggers.
+
+Durante este review se trabajaron conceptos avanzados de desarrollo backend:
+
+- **Operadores de Conjuntos:** manipulación y combinación de resultados con `UNION`, `UNION ALL`, `INTERSECT` y `EXCEPT`.
+- **Vistas (Views):** encapsulamiento de consultas complejas mediante `CREATE VIEW` para reportes agregados.
+- **Procedimientos Almacenados (Stored Procedures):** lógica de negocio con `CREATE PROCEDURE` ejecutada mediante `CALL`.
+- **Funciones PL/pgSQL:** cálculo de datos dinámicos utilizando `CREATE FUNCTION`, declaración de variables y retorno de tipos explícitos (`RETURNS`).
+- **Triggers y Auditoría:** automatización de eventos (`AFTER UPDATE`) para registro histórico de cambios en tablas mediante variables relacionales `OLD` y `NEW`.
