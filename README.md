@@ -141,7 +141,7 @@ Durante este review se trabajaron conceptos clave de consulta y agregación anal
 El objetivo fue practicar la generación de reportes detallados, métricas acumulativas, cálculos porcentuales mensuales y análisis comparativos por vendedor.
 
 ### 05-progra-automatizacion
-
+---
 Review enfocado en la programación procedural en PostgreSQL (PL/pgSQL), creación de vistas y automatización mediante triggers.
 
 Durante este review se trabajaron conceptos avanzados de desarrollo backend:
