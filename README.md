@@ -13,3 +13,141 @@ Reforzar los conocimientos de PostgreSQL mediante ejercicios prácticos relacion
 - Relaciones entre tablas.
 - Operaciones CRUD.
 - Buenas prácticas en PostgreSQL.
+
+
+## Estructura actual del repositorio
+
+```text
+postgresql-review/
+├── reviews/
+│   ├── 01-campus/
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   ├── delete.sql
+│   │   │   ├── insert.sql
+│   │   │   └── update.sql
+│   │   ├── dql/
+│   │   │   └── queries.sql
+│   │   └── ejercicios_crud.md
+│   │
+│   ├── 02-biblioteca/
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   └── inserts.sql
+│   │   ├── dql/
+│   │   │   └── queries.sql
+│   │   └── review_consultas.md
+│   │
+│   ├── 03-operaciones-avanzadas/
+│   │   ├── backup/
+│   │   │   ├── customers_bck.sql
+│   │   │   └── customers_bck.tar
+│   │   ├── cleanup/
+│   │   │   └── duplicates.sql
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   ├── delete.sql
+│   │   │   ├── insert.sql
+│   │   │   └── update.sql
+│   │   ├── dql/
+│   │   │   └── queries.sql
+│   │   ├── import/
+│   │   │   ├── data_add.csv
+│   │   │   └── data.csv
+│   │   └── instrucciones.md
+│   │
+│   ├── 04-wf-cte/
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   └── insert.sql
+│   │   ├── dql/
+│   │   │   └── queries.sql
+│   │   └── review.md
+│   │
+│   └── 05-progra-automatizacion/
+│       ├── ddl/
+│       │   └── schema.sql
+│       ├── dml/
+│       │   └── insert.sql
+│       ├── dql/
+│       │   ├── set_operations.sql
+│       │   └── views.sql
+│       ├── routines/
+│       │   ├── functions.sql
+│       │   └── procedures.sql
+│       ├── triggers/
+│       │   └── audit_triggers.sql
+│       └── instructions.md
+└── README.md
+```
+
+## Reviews realizados
+### 01-campus
+---
+Review enfocado en el diseño y manejo de una base de datos para estudiantes de la escuela Campus.
+
+Durante este review se trabajaron los principales comandos SQL:
+
+- **DDL:** creación de la estructura de la base de datos y sus tablas.
+- **DML:** inserción, actualización y eliminación de registros mediante `INSERT`, `UPDATE` y `DELETE`.
+- **DQL:** consulta de información utilizando `SELECT`.
+
+El objetivo fue practicar las operaciones básicas de gestión de datos y realizar consultas sobre la información de los estudiantes.
+
+### 02-biblioteca
+---
+Review enfocado en la consulta y análisis de una base de datos para una biblioteca.
+
+Durante este review se trabajaron los principales comandos y cláusulas de DQL mediante consultas sobre libros y autores, utilizando:
+
+- `SELECT`
+- `WHERE`
+- `ORDER BY`
+- `LIMIT`
+- `LIKE` 
+- `BETWEEN`
+- `JOIN`
+- Funciones de agregación como `COUNT`, `AVG`, `MIN` y `MAX`
+- `GROUP BY`
+- `HAVING`
+
+El objetivo fue practicar la obtención, filtrado, ordenamiento y análisis de información relacionada con libros, autores, precios, fechas de publicación y nacionalidades.
+
+### 03-operaciones-avanzadas
+---
+Review enfocado en operaciones avanzadas de administración, mantenimiento y manipulación de datos en PostgreSQL.
+
+Durante este review se trabajaron conceptos y herramientas clave de nivel backend:
+
+- **Carga masiva de datos:** importación desde archivos CSV utilizando comandos `\copy`.
+- **Gestión de secuencias y unicidad:** restricción `UNIQUE`, manejo de conflictos con `ON CONFLICT ... DO NOTHING` y resincronización de secuencias con `SETVAL` y `pg_get_serial_sequence`.
+- **Actualizaciones complejas:** sincronización entre tablas mediante `UPDATE ... FROM`, uso de la cláusula `RETURNING` y captura de datos en variables dentro de bloques procedurales `DO` (PL/pgSQL).
+- **Limpieza de datos (Cleanup):** eliminación condicional con subconsultas (`DELETE ... WHERE NOT IN`) y deduplicación avanzada mediante `CTE` y funciones de ventana (`ROW_NUMBER() OVER`).
+- **Respaldos y restauración (CLI):** generación de backups en formato plano (`.sql`) y binario (`.tar`) usando `pg_dump`, y su posterior restauración con `psql` y `pg_restore`.
+
+### 04-wf-cte
+---
+Review enfocado en la implementación de Funciones de Ventana (Window Functions) y Expresiones de Tabla Comunes (CTEs) para el análisis avanzado de datos de ventas.
+
+Durante este review se trabajaron conceptos clave de consulta y agregación analítica en PostgreSQL:
+
+- **Funciones de ventana:** análisis comparativo de registros con `LAG()`, cálculo de acumulados diarios e históricos mediante `SUM() OVER()`, numeración secuencial con `ROW_NUMBER() OVER()` y particionado por períodos de tiempo usando `DATE_TRUNC()`.
+- **Expresiones de tabla comunes (CTEs):** estructuración de consultas complejas utilizando la cláusula `WITH` para modularizar lógica de negocio, agregación con `SUM()`, `AVG()` y `COUNT()`, manejo de valores nulos con `COALESCE()`, combinación de bloques mediante `FULL OUTER JOIN` y filtrado condicional sobre métricas agregadas.
+
+El objetivo fue practicar la generación de reportes detallados, métricas acumulativas, cálculos porcentuales mensuales y análisis comparativos por vendedor.
+
+### 05-progra-automatizacion
+---
+Review enfocado en la programación procedural en PostgreSQL (PL/pgSQL), creación de vistas y automatización mediante triggers.
+
+Durante este review se trabajaron conceptos avanzados de desarrollo backend:
+
+- **Operadores de Conjuntos:** manipulación y combinación de resultados con `UNION`, `UNION ALL`, `INTERSECT` y `EXCEPT`.
+- **Vistas (Views):** encapsulamiento de consultas complejas mediante `CREATE VIEW` para reportes agregados.
+- **Procedimientos Almacenados (Stored Procedures):** lógica de negocio con `CREATE PROCEDURE` ejecutada mediante `CALL`.
+- **Funciones PL/pgSQL:** cálculo de datos dinámicos utilizando `CREATE FUNCTION`, declaración de variables y retorno de tipos explícitos (`RETURNS`).
+- **Triggers y Auditoría:** automatización de eventos (`AFTER UPDATE`) para registro histórico de cambios en tablas mediante variables relacionales `OLD` y `NEW`.
