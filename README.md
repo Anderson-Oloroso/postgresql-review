@@ -68,20 +68,36 @@ postgresql-review/
 │   │   │   └── queries.sql
 │   │   └── review.md
 │   │
-│   └── 05-progra-automatizacion/
+│   ├── 05-progra-automatizacion/
+│   │   ├── ddl/
+│   │   │   └── schema.sql
+│   │   ├── dml/
+│   │   │   └── insert.sql
+│   │   ├── dql/
+│   │   │   ├── set_operations.sql
+│   │   │   └── views.sql
+│   │   ├── routines/
+│   │   │   ├── functions.sql
+│   │   │   └── procedures.sql
+│   │   ├── triggers/
+│   │   │   └── audit_triggers.sql
+│   │   └── instructions.md
+│   │
+│   └── 06-import-nosql/
 │       ├── ddl/
 │       │   └── schema.sql
 │       ├── dml/
-│       │   └── insert.sql
+│       │   ├── import_json.sql
+│       │   ├── import_xml.sql
+│       │   ├── insert_arrays.sql
+│       │   └── insert_blob.sql
 │       ├── dql/
-│       │   ├── set_operations.sql
-│       │   └── views.sql
-│       ├── routines/
-│       │   ├── functions.sql
-│       │   └── procedures.sql
-│       ├── triggers/
-│       │   └── audit_triggers.sql
-│       └── instructions.md
+│       │   └── queries.sql
+│       ├── import/
+│       │   ├── categorias.json
+│       │   ├── imagen.jpg
+│       │   └── juegos.xml
+│       └── notes.md
 └── README.md
 ```
 
@@ -151,3 +167,20 @@ Durante este review se trabajaron conceptos avanzados de desarrollo backend:
 - **Procedimientos Almacenados (Stored Procedures):** lógica de negocio con `CREATE PROCEDURE` ejecutada mediante `CALL`.
 - **Funciones PL/pgSQL:** cálculo de datos dinámicos utilizando `CREATE FUNCTION`, declaración de variables y retorno de tipos explícitos (`RETURNS`).
 - **Triggers y Auditoría:** automatización de eventos (`AFTER UPDATE`) para registro histórico de cambios en tablas mediante variables relacionales `OLD` y `NEW`.
+
+### 06-import-nosql
+
+Review enfocado en las capacidades NoSQL y la ingesta de datos semiestructurados y no estructurados en PostgreSQL utilizando la base de datos `admin_nosql`.
+
+Durante este review se trabajaron los siguientes conceptos:
+
+- **Parsing e Importación JSONB:** carga de datasets desde archivos `.json` mediante `\copy`, sanitización de sintaxis en streaming y desarticulación relacional con `jsonb_array_elements`.
+- **Procesamiento de XML:** ingesta y desestructuración de archivos `.xml` en esquemas relacionales utilizando `XMLTABLE` y consultas XPath.
+- **Manejo de Arreglos (ARRAY):** almacenamiento de listas dentro de columnas tipo vector, indexación de elementos, conteo con `cardinality` y filtrado condicional con `ANY`.
+- **Archivos Binarios (BYTEA):** almacenamiento de archivos de imagen mediante `pg_read_binary_file` y auditoría del peso en memoria mediante `octet_length`.
+
+### Creador
+- Henrik Anderson Oloroso García
+
+### Ultima actualización
+- Fecha: 2024-06-10
