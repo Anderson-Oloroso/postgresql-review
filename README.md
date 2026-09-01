@@ -178,3 +178,9 @@ Durante este review se trabajaron los siguientes conceptos:
 - **Procesamiento de XML:** ingesta y desestructuración de archivos `.xml` en esquemas relacionales utilizando `XMLTABLE` y consultas XPath.
 - **Manejo de Arreglos (ARRAY):** almacenamiento de listas dentro de columnas tipo vector, indexación de elementos, conteo con `cardinality` y filtrado condicional con `ANY`.
 - **Archivos Binarios (BYTEA):** almacenamiento de archivos de imagen mediante `pg_read_binary_file` y auditoría del peso en memoria mediante `octet_length`.
+
+### Creador
+- Henrik Anderson Oloroso García
+
+### Ultima actualización
+- Fecha: 2024-06-10
